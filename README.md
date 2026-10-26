@@ -32,7 +32,7 @@ Abre <http://127.0.0.1:8765/>.
 
 El sitio se sirve desde la rama `main` con GitHub Pages:
 
-<https://Aeespq.github.io/cumple-valeria/>
+<https://aeespq.github.io/cumple-valeria/>
 
 Para actualizarlo:
 
