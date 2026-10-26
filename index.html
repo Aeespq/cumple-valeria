@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feliz cumpleaños, Valeria</title>
+  <meta name="description" content="Una sorpresa pequeñita para Valeria. Ábrela.">
+  <meta name="theme-color" content="#fff3f7">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Feliz cumpleaños, Valeria">
+  <meta property="og:description" content="Hay un regalo esperándote. Toca para abrirlo.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/quicksand-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+    <div class="floaters">
+      <span>♥</span><span>✦</span><span>♥</span><span>✿</span><span>♥</span>
+      <span>✦</span><span>♥</span><span>✿</span><span>♥</span><span>✦</span>
+    </div>
+  </div>
+
+  <main id="app">
+    <section class="scene scene--gift is-active" id="scene-gift" aria-labelledby="gift-title">
+      <p class="eyebrow">Hoy es un día especial</p>
+      <h1 id="gift-title">Para <span class="name">Valeria</span></h1>
+
+      <button class="gift" id="gift-btn" type="button" aria-label="Abrir el regalo de Valeria">
+        <span class="gift__shadow"></span>
+        <span class="gift__box">
+          <span class="gift__ribbon gift__ribbon--v"></span>
+          <span class="gift__ribbon gift__ribbon--h"></span>
+        </span>
+        <span class="gift__lid">
+          <span class="gift__bow">
+            <span class="gift__loop gift__loop--l"></span>
+            <span class="gift__loop gift__loop--r"></span>
+            <span class="gift__knot"></span>
+          </span>
+        </span>
+        <span class="gift__tag">Valeria</span>
+        <span class="gift__sparkles" aria-hidden="true">
+          <span>✦</span><span>✧</span><span>✦</span><span>✧</span>
+        </span>
+      </button>
+
+      <p class="hint" id="gift-hint">Toca el regalo para abrirlo</p>
+    </section>
+
+    <section class="scene scene--cake" id="scene-cake" aria-labelledby="cake-title" hidden>
+      <p class="eyebrow">Ya casi está</p>
+      <h2 id="cake-title">Pide un deseo, Valeria</h2>
+      <p class="sub">Mantén pulsado para soplar las velas</p>
+
+      <div class="cake" id="cake" aria-hidden="true">
+        <div class="cake__glow"></div>
+        <div class="cake__plate"></div>
+        <div class="cake__tier cake__tier--bottom"></div>
+        <div class="cake__drip cake__drip--bottom"></div>
+        <div class="cake__tier cake__tier--top"></div>
+        <div class="cake__drip cake__drip--top"></div>
+        <div class="candles">
+          <div class="candle" data-candle="0">
+            <span class="candle__stick"></span>
+            <span class="candle__flame"></span>
+            <span class="candle__smoke"></span>
+          </div>
+          <div class="candle" data-candle="1">
+            <span class="candle__stick"></span>
+            <span class="candle__flame"></span>
+            <span class="candle__smoke"></span>
+          </div>
+          <div class="candle" data-candle="2">
+            <span class="candle__stick"></span>
+            <span class="candle__flame"></span>
+            <span class="candle__smoke"></span>
+          </div>
+        </div>
+      </div>
+
+      <button class="blow" id="blow-btn" type="button">
+        <span class="blow__ring" aria-hidden="true"></span>
+        <span class="blow__label">Soplar</span>
+      </button>
+      <p class="wish" id="wish-text" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="scene scene--card" id="scene-card" aria-labelledby="card-title" hidden>
+      <article class="card">
+        <p class="card__kicker">Feliz cumpleaños</p>
+        <h2 id="card-title">Valeria</h2>
+        <p class="card__text">
+          Que este año te traiga risas de las que duelen la barriga,
+          planes que salgan bien y algún que otro capricho.
+          Gracias por estar, por las tardes que se alargan
+          y por ser de las que hacen que todo pese menos.
+        </p>
+        <p class="card__text card__text--small">
+          Ojalá lo celebremos muchas veces más.
+        </p>
+        <p class="card__sign">— Ale</p>
+        <div class="card__hearts" aria-hidden="true">♥ ♥ ♥</div>
+      </article>
+      <button class="again" id="again-btn" type="button">Verlo otra vez</button>
+    </section>
+  </main>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <button class="sound" id="sound-btn" type="button" aria-pressed="true" aria-label="Silenciar la música">
+    <svg class="sound__on" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+      <path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <svg class="sound__off" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+      <path d="m16 9 5 6m0-6-5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
